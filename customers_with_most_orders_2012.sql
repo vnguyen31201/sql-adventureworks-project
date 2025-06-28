@@ -1,5 +1,5 @@
 -- Which customers placed the most orders in 2012?
-SELECT TOP 10 c.FirstName, c.LastName, SUM(s.SalesAmount) AS TotalSales
+SELECT TOP 10 c.FirstName, c.LastName, ROUND(SUM(s.SalesAmount), 2) AS TotalSales
 FROM dbo.FactInternetSales AS s
 LEFT JOIN dbo.DimCustomer AS c
 ON s.CustomerKey = c.CustomerKey

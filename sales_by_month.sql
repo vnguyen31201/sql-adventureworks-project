@@ -1,5 +1,5 @@
 -- Which month saw the highest sales overall?
-SELECT d.EnglishMonthName AS Month, SUM(s.SalesAmount) AS TotalSales
+SELECT d.EnglishMonthName AS Month, ROUND(SUM(s.SalesAmount), 2) AS TotalSales
 FROM dbo.FactInternetSales AS s
 JOIN dbo.DimDate AS d
 ON s.OrderDateKey = d.DateKey

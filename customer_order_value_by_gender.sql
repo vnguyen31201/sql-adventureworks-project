@@ -43,7 +43,7 @@ TopProductByGender AS (
 -- Combine Average Order Value and Top Product
 SELECT 
     aov.Gender,
-    aov.AvgOrderValue,
+    ROUND(aov.AvgOrderValue, 2) AS AvgOrderValue,
     tpb.ProductName AS TopProduct
 FROM AverageOrderValueByGender aov
 LEFT JOIN TopProductByGender tpb ON aov.Gender = tpb.Gender;
